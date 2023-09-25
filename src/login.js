@@ -20,19 +20,19 @@ function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      {error && <p>{error}</p>}
+    <div className="container">
+      <h2 className="my-4">Login</h2>
+      {error && <p className="alert alert-danger">{error}</p>}
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="form-group">
           <label>Email</label>
-          <input type="email" onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password</label>
-          <input type="password" onChange={(e) => setPassword(e.target.value)} />
+          <input type="password" className="form-control" onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="btn btn-primary">Login</button>
       </form>
     </div>
   );
