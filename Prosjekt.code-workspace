@@ -1,0 +1,35 @@
+{
+  "folders": [
+	{
+		"name": "Prosjekt",
+		"path": "../../Prosjekt"
+	},
+	{
+		"name": "Nordix",
+		"path": "../../WEB/Nordix"
+	},
+	{
+		"name": "PROG1100",
+		"path": "../../PROG1100"
+	},
+	{
+		"name": "MYSQL",
+		"path": "../../MYSQL"
+	},
+	{
+		"path": "../../programmer"
+	},
+	{
+		"path": "../../Users/san-k/Desktop/EKSAMEN 2023"
+	},
+	{
+		"path": "../../Users/san-k/Desktop/PRG1100 eksamen"
+	},
+	{
+		"path": "../../OBJEKT ORIENTERT PROGRAMMERING"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Prosjekt"
+  }
+}
