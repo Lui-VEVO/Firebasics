@@ -1,13 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './login.js'; // Endre stien hvis Login-komponenten din er i en annen mappe
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from './src/login.js/index.js'; // Endre stien hvis Login-komponenten din er i en annen mappe
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Routes>
+        <Switch>
           <Route path="/login" component={Login} />
           <Route path="/" exact>
             <header className="App-header">
@@ -17,11 +17,10 @@ function App() {
             </header>
           </Route>
           {/* Du kan legge til flere ruter etter behov */}
-        </Routes>
+        </Switch>
       </div>
     </Router>
   );
 }
 
 export default App;
-

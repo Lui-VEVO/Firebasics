@@ -1,15 +1,18 @@
 import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAZJ7aLG2y_JE1HwduEQCHb6_2D0njWEns",
-  authDomain: "fir-test-prosjekt-9998e.firebaseapp.com",
-  projectId: "fir-test-prosjekt-9998e",
-  storageBucket: "fir-test-prosjekt-9998e.appspot.com",
-  messagingSenderId: "597075351471",
-  appId: "1:597075351471:web:f6efc28673f6175cc3415a",
-  measurementId: "G-EBGWSQ99TZ"
+  apiKey: "your-api-key",
+  authDomain: "your-auth-domain",
+  projectId: "your-project-id",
+  storageBucket: "your-storage-bucket",
+  messagingSenderId: "your-messaging-sender-id",
+  appId: "your-app-id"
 };
 
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-export default app;
+export { auth, db, app };
