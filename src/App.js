@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './login.js'; // Endre stien hvis Login-komponenten din er i en annen mappe
+import Login from './login'; // Pass på at dette er riktig sti til filen, og det er vanlig å bruke stor forbokstav for komponentfiler
 import './App.css';
 
 function App() {
@@ -8,20 +8,22 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/login" component={Login} />
-          <Route path="/" exact>
-            <header className="App-header">
-              <p>Welcome to our App!</p>
-              {/* Du kan legge til en lenke til login siden her hvis du vil */}
-              <a href="/login">Go to Login</a>
-            </header>
-          </Route>
-          {/* Du kan legge til flere ruter etter behov */}
+          <Route path="/login" element={<Login />} /> {/* Bruk element prop med JSX */}
+          <Route path="/" element={<Home />} /> {/* Du kan opprette en egen Home komponent for hovedsiden */}
         </Routes>
       </div>
     </Router>
   );
 }
 
-export default App;
+// Hvis du ikke har en egen komponent for "/" ruten, kan du definere den direkte i App.js
+function Home() {
+  return (
+    <header className="App-header">
+      <p>Welcome to our App!</p>
+      <a href="/login">Go to Login</a>
+    </header>
+  );
+}
 
+export default App;
