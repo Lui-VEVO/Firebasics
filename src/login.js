@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Korrigert import av useNavigate
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './firebase.js'; // Bytt til .js hvis du ikke bruker JSX i denne filen
 
 function Login() {
+  console.log('Rendering Login Component');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Korrigert fra history til navigate
-  const auth = getAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/dashboard'); // Bruke navigate direkte, erstattet history.push med navigate
+      navigate('/dashboard');
     } catch (error) {
       setError('Failed to log in. Please check your email and password.');
     }
